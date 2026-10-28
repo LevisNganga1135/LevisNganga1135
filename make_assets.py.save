@@ -1,0 +1,217 @@
+import os
+
+os.makedirs("assets", exist_ok=True)
+
+SERIF = "Georgia, 'Times New Roman', serif"
+MONO = "'Courier New', monospace"
+WAVE = "t75 0 " * 15
+
+
+def write(name, content):
+    with open(f"assets/{name}", "w", encoding="utf-8") as f:
+        f.write(content)
+
+
+# ---------- 1. Section headers with depth gauge ----------
+def header(title, depth, zone):
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 64" width="900" height="64">
+  <defs>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0d5a70"/>
+      <stop offset="0.65" stop-color="#07384a"/>
+      <stop offset="1" stop-color="#031621"/>
+    </linearGradient>
+    <clipPath id="c"><rect width="900" height="64" rx="12"/></clipPath>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect width="900" height="64" fill="url(#bar)"/>
+    <path d="M0 52 q37.5 -9 75 0 {WAVE}V64 H0 Z" fill="#0a6c8f" opacity="0.35">
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="-150 0" dur="6s" repeatCount="indefinite"/>
+    </path>
+    <g fill="none" stroke="#bff3ff" stroke-width="1">
+      <circle cx="520" cy="60" r="3">
+        <animate attributeName="cy" from="66" to="-6" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.7;0" dur="6s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="640" cy="60" r="2">
+        <animate attributeName="cy" from="66" to="-6" dur="5s" begin="-2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.7;0" dur="5s" begin="-2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <circle cx="34" cy="30" r="4" fill="#3de0d0"/>
+    <circle cx="34" cy="30" r="4" fill="none" stroke="#3de0d0" stroke-width="1.5">
+      <animate attributeName="r" from="4" to="22" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" from="0.8" to="0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <text x="66" y="40" font-family="{SERIF}" font-size="26" fill="#d7f5f7">{title}</text>
+    <text x="876" y="30" text-anchor="end" font-family="{MONO}" font-size="15" fill="#d7f5f7">{depth}</text>
+    <text x="876" y="46" text-anchor="end" font-family="{MONO}" font-size="11" fill="#9fdcef">{zone}</text>
+  </g>
+</svg>"""
+
+
+headers = [
+    ("Surface Log", "0 m", "SUNLIGHT ZONE", "header-surface.svg"),
+    ("Depth Zones", "200 m", "TWILIGHT ZONE", "header-zones.svg"),
+    ("Toolkit", "400 m", "TWILIGHT ZONE", "header-toolkit.svg"),
+    ("Treasures From the Deep", "600 m", "TWILIGHT ZONE", "header-treasures.svg"),
+    ("Dive Log", "1,000 m", "MIDNIGHT ZONE", "header-divelog.svg"),
+    ("Sonar Readings", "2,000 m", "MIDNIGHT ZONE", "header-sonar.svg"),
+    ("Treasure Chest", "3,000 m", "MIDNIGHT ZONE", "header-chest.svg"),
+    ("Send a Signal", "4,000 m", "ABYSSAL ZONE", "header-signal.svg"),
+]
+for t, d, z, fn in headers:
+    write(fn, header(t, d, z))
+
+
+# ---------- 2. Project cards ----------
+def card(title, lines, tags, kind):
+    col = "#3de0d0" if kind == "LIVE" else "#9fdcef"
+    tag_svg = ""
+    x = 24
+    for t in tags:
+        w = int(len(t) * 7.4 + 20)
+        tag_svg += (
+            f'<rect x="{x}" y="112" width="{w}" height="24" rx="12" fill="#0a6c8f" '
+            f'fill-opacity="0.3" stroke="#3de0d0" stroke-opacity="0.5"/>'
+            f'<text x="{x + w / 2}" y="128" text-anchor="middle" font-family="{MONO}" '
+            f'font-size="12" fill="#bff3ff">{t}</text>'
+        )
+        x += w + 8
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 150" width="440" height="150">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07384a"/>
+      <stop offset="1" stop-color="#031621"/>
+    </linearGradient>
+    <clipPath id="c"><rect width="440" height="150" rx="14"/></clipPath>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect width="440" height="150" fill="url(#bg)"/>
+    <rect x="-150" y="-40" width="50" height="260" fill="#9fe8ff" opacity="0.05" transform="rotate(20)">
+      <animate attributeName="x" from="-150" to="600" dur="7s" repeatCount="indefinite"/>
+    </rect>
+    <text x="24" y="44" font-family="{SERIF}" font-size="22" fill="#d7f5f7">{title}</text>
+    <rect x="350" y="20" width="70" height="26" rx="13" fill="none" stroke="{col}" stroke-opacity="0.6"/>
+    <circle cx="367" cy="33" r="3.5" fill="{col}">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="378" y="38" font-family="{MONO}" font-size="12" fill="{col}">{kind}</text>
+    <text x="24" y="74" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#bfe6ee">{lines[0]}</text>
+    <text x="24" y="94" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#bfe6ee">{lines[1]}</text>
+    {tag_svg}
+  </g>
+  <rect x="0.75" y="0.75" width="438.5" height="148.5" rx="13.5" fill="none" stroke="#3de0d0" stroke-opacity="0.3"/>
+</svg>"""
+
+
+cards = [
+    ("Feel The Burn", ("React fitness tracker with progress", "charts, streaks, and body goals."),
+     ["React", "Recharts", "Vercel"], "LIVE", "card-feel-the-burn.svg"),
+    ("Deep-Sea Portfolio", ("My ocean-themed portfolio with", "animated creatures and scroll effects."),
+     ["HTML", "CSS", "JavaScript"], "LIVE", "card-portfolio.svg"),
+    ("Supercar Tracker", ("Python CLI dealership management", "tool with tests and a Git workflow."),
+     ["Python", "CLI", "Testing"], "REPO", "card-supercar.svg"),
+    ("Mama Oliech Restaurant", ("Team-built restaurant app with", "payments and a REST API."),
+     ["Node.js", "Express", "Team"], "REPO", "card-mama-oliech.svg"),
+]
+for title, lines, tags, kind, fn in cards:
+    write(fn, card(title, lines, tags, kind))
+
+
+# ---------- 3. Dive Log (skill depth gauge) ----------
+# Edit these numbers: depth in metres out of 1000
+skills = [
+    ("Python", 520),
+    ("JavaScript", 560),
+    ("React", 450),
+    ("Node.js / Express", 400),
+    ("Cybersecurity", 150),
+]
+
+
+def divelog():
+    rows = ""
+    for i, (name, v) in enumerate(skills):
+        y = 66 + i * 36
+        w = int(v / 2)
+        rows += f"""
+    <text x="24" y="{y + 5}" font-family="{SERIF}" font-size="17" fill="#d7f5f7">{name}</text>
+    <rect x="250" y="{y - 8}" width="500" height="16" rx="8" fill="#031621" stroke="#0a6c8f" stroke-opacity="0.5"/>
+    <rect x="250" y="{y - 8}" width="0" height="16" rx="8" fill="url(#fill)">
+      <animate attributeName="width" values="0;{w};{w}" keyTimes="0;0.3;1" dur="9s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="250" cy="{y}" r="5" fill="#bff3ff">
+      <animate attributeName="cx" values="250;{250 + w};{250 + w}" keyTimes="0;0.3;1" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <text x="876" y="{y + 5}" text-anchor="end" font-family="{MONO}" font-size="14" fill="#9fdcef">{v:,} m</text>"""
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 250" width="900" height="250">
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d5a70"/>
+      <stop offset="0.5" stop-color="#07384a"/>
+      <stop offset="1" stop-color="#031621"/>
+    </linearGradient>
+    <linearGradient id="fill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0a8fa8"/>
+      <stop offset="1" stop-color="#3de0d0"/>
+    </linearGradient>
+    <clipPath id="c"><rect width="900" height="250" rx="14"/></clipPath>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect width="900" height="250" fill="url(#sea)"/>
+    <g stroke="#9fdcef" stroke-opacity="0.12">
+      <line x1="250" y1="40" x2="250" y2="230"/>
+      <line x1="375" y1="40" x2="375" y2="230"/>
+      <line x1="500" y1="40" x2="500" y2="230"/>
+      <line x1="625" y1="40" x2="625" y2="230"/>
+      <line x1="750" y1="40" x2="750" y2="230"/>
+    </g>
+    <text x="24" y="30" font-family="{MONO}" font-size="13" fill="#3de0d0">DEPTH GAUGE · 0 m to 1,000 m</text>
+    {rows}
+  </g>
+</svg>"""
+
+
+write("dive-log.svg", divelog())
+
+
+# ---------- 4. Send a signal banner ----------
+signal = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 160" width="900" height="160">
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#07384a"/>
+      <stop offset="1" stop-color="#020b18"/>
+    </linearGradient>
+    <clipPath id="c"><rect width="900" height="160" rx="14"/></clipPath>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect width="900" height="160" fill="url(#sea)"/>
+    <g fill="none" stroke="#3de0d0" stroke-width="2">
+      <circle cx="80" cy="80" r="6">
+        <animate attributeName="r" from="6" to="110" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" from="0.8" to="0" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="80" cy="80" r="6">
+        <animate attributeName="r" from="6" to="110" dur="4s" begin="1.3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" from="0.8" to="0" dur="4s" begin="1.3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="80" cy="80" r="6">
+        <animate attributeName="r" from="6" to="110" dur="4s" begin="2.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" from="0.8" to="0" dur="4s" begin="2.6s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <circle cx="80" cy="80" r="6" fill="#3de0d0"/>
+    <text x="170" y="52" font-family="{MONO}" font-size="13" letter-spacing="3" fill="#3de0d0">
+      INCOMING SIGNAL
+      <animate attributeName="opacity" values="1;0.4;1" dur="2.5s" repeatCount="indefinite"/>
+    </text>
+    <text x="170" y="94" font-family="{SERIF}" font-size="29" fill="#d7f5f7">Got a project, an idea, or a team to join?</text>
+    <text x="170" y="126" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#9fdcef">Send a ping and I will surface to reply.</text>
+  </g>
+</svg>"""
+write("signal.svg", signal)
+
+print("Done! Files in assets/:")
+for f in sorted(os.listdir("assets")):
+    print(" -", f)
