@@ -14,21 +14,22 @@
 <a href="https://github.com/LevisNganga1135?tab=repositories">
   <img src="https://img.shields.io/badge/%E2%9A%93_Explore-Repositories-0a6c8f?style=for-the-badge&labelColor=020b18" alt="Repositories" />
 </a>
+<img src="https://img.shields.io/github/followers/LevisNganga1135?style=for-the-badge&logo=github&logoColor=00e5ff&label=Crew&color=04364f&labelColor=020b18" alt="Followers" />
 
 </div>
 
-<br/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:020b18,100:0a6c8f&height=60&section=header" width="100%" alt="" />
 
 ## 🫧 Surface Log
 
 > *"The deeper you dive, the stranger and more beautiful it gets."*
 
-- 🎓 Software Engineering graduate from **Moringa School**, Nairobi
+- 🎓 Software Engineering student at **Moringa School**, Nairobi
 - 🔐 Resuming in January as a part-time remote **cybersecurity** student
 - 🤝 I love building in teams and shipping real projects
 - 🌱 Learning something new with every commit
 
-<br/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0a6c8f,100:020b18&height=60&section=header&reversal=true" width="100%" alt="" />
 
 ## 🌌 Depth Zones
 
@@ -38,7 +39,7 @@
 | 🌅 **Twilight Zone** | Going deeper | React · Node.js · Express · Flask |
 | 🌑 **Midnight Zone** | Diving now | Cybersecurity · Secure coding · Networking |
 
-<br/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:020b18,100:0a6c8f&height=60&section=header" width="100%" alt="" />
 
 ## 🛠️ Toolkit
 
@@ -55,7 +56,7 @@
 
 </div>
 
-<br/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0a6c8f,100:020b18&height=60&section=header&reversal=true" width="100%" alt="" />
 
 ## 🐙 Treasures From the Deep
 
@@ -64,23 +65,29 @@
 | 🔥 **Feel The Burn** | React fitness tracker with progress charts, streaks, and body goals | [Live](https://calipath-eta.vercel.app) |
 | 🌊 **Deep-Sea Portfolio** | My redesigned portfolio with an ocean theme and scroll effects | [Live](https://levisnganga1135.github.io/updated-portfolio) |
 | 🚗 **Supercar Tracker** | Python CLI dealership management tool | [Repo](https://github.com/LevisNganga1135/supercar-tracker) |
-| 🍽️ **Mama Oliech Restaurant** | Team-built Node.js/Express restaurant app | [Repo](https://github.com/LevisNganga1135?tab=repositories) |
+| 🍽️ **Mama Oliech Restaurant** | Team-built Node.js/Express restaurant app | [Repo](https://github.com/LevisNganga1135/Mama-oliech-restorant) |
 
-<br/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:020b18,100:0a6c8f&height=60&section=header" width="100%" alt="" />
 
 ## 📊 Sonar Readings
 
 <div align="center">
 
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=LevisNganga1135&show_icons=true&hide_border=true&bg_color=020b18&title_color=00e5ff&icon_color=00e5ff&text_color=9fdcef" alt="GitHub stats" />
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=LevisNganga1135&layout=compact&hide_border=true&bg_color=020b18&title_color=00e5ff&text_color=9fdcef" alt="Top languages" />
-
-</div>
+<img src="https://raw.githubusercontent.com/LevisNganga1135/LevisNganga1135/main/assets/ocean.svg" width="100%" alt="Animated deep-sea scene with swimming fish" />
 
 <br/>
 
-<div align="center">
+<img height="170" src="https://github-readme-stats.vercel.app/api?username=LevisNganga1135&show_icons=true&hide_border=true&bg_color=020b18&title_color=00e5ff&icon_color=00e5ff&text_color=9fdcef" alt="GitHub stats" />
+<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=LevisNganga1135&layout=compact&hide_border=true&bg_color=020b18&title_color=00e5ff&text_color=9fdcef" alt="Top languages" />
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0a6c8f,50:04364f,100:020b18&height=140&section=footer&reversal=true" alt="footer" />
+<br/>
+
+<img src="https://streak-stats.demolab.com?user=LevisNganga1135&theme=transparent&background=020B18&ring=00E5FF&fire=00E5FF&currStreakLabel=9FDCEF&sideLabels=9FDCEF&currStreakNum=00E5FF&sideNums=00E5FF&dates=4A90A4&hide_border=true" alt="Streak stats" />
+
+<br/>
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=LevisNganga1135&bg_color=020b18&color=00e5ff&line=0a6c8f&point=ffffff&area=true&area_color=0a6c8f&hide_border=true&title_color=00e5ff" width="100%" alt="Contribution depth chart" />
 
 </div>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0a6c8f,50:04364f,100:020b18&height=140&section=footer&reversal=true" width="100%" alt="footer" />
