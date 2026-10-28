@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" width="900" height="260">
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a6c8f"/>
+      <stop offset="0.55" stop-color="#04364f"/>
+      <stop offset="1" stop-color="#020b18"/>
+    </linearGradient>
+    <clipPath id="round">
+      <rect width="900" height="260" rx="14"/>
+    </clipPath>
+    <filter id="glow" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g clip-path="url(#round)">
+    <!-- water -->
+    <rect width="900" height="260" fill="url(#sea)"/>
+
+    <!-- light rays -->
+    <polygon points="120,0 190,0 330,260 190,260" fill="#ffffff" opacity="0.05">
+      <animate attributeName="opacity" values="0.03;0.1;0.03" dur="6s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="560,0 620,0 760,260 640,260" fill="#ffffff" opacity="0.05">
+      <animate attributeName="opacity" values="0.09;0.03;0.09" dur="7s" repeatCount="indefinite"/>
+    </polygon>
+
+    <!-- back wave -->
+    <path d="M0 150 q112.5 -34 225 0 t225 0 t225 0 t225 0 t225 0 t225 0 V260 H0 Z" fill="#0a6c8f" opacity="0.35">
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="-450 0" dur="14s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- bubbles -->
+    <g fill="none" stroke="#9fdcef" stroke-width="1.2">
+      <circle cx="120" cy="250" r="4">
+        <animate attributeName="cy" from="260" to="-10" dur="9s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.8;0" dur="9s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="330" cy="250" r="3">
+        <animate attributeName="cy" from="260" to="-10" dur="7s" begin="-3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.8;0" dur="7s" begin="-3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="560" cy="250" r="5">
+        <animate attributeName="cy" from="260" to="-10" dur="11s" begin="-5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.8;0" dur="11s" begin="-5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="790" cy="250" r="3.5">
+        <animate attributeName="cy" from="260" to="-10" dur="8s" begin="-1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.8;0" dur="8s" begin="-1s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- name -->
+    <g filter="url(#glow)">
+      <text x="450" y="115" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="58" font-weight="700" letter-spacing="3" fill="#00e5ff">
+        LEVIS NGANGA
+        <animate attributeName="opacity" values="0.85;1;0.85" dur="4s" repeatCount="indefinite"/>
+      </text>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -4; 0 0" dur="5s" repeatCount="indefinite"/>
+    </g>
+    <text x="450" y="155" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" letter-spacing="4" fill="#9fdcef">
+      DIVING DEEP INTO CODE
+    </text>
+
+    <!-- middle wave -->
+    <path d="M0 175 q112.5 -30 225 0 t225 0 t225 0 t225 0 t225 0 t225 0 V260 H0 Z" fill="#0a6c8f" opacity="0.5">
+      <animateTransform attributeName="transform" type="translate" from="-450 0" to="0 0" dur="10s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- front wave -->
+    <path d="M0 200 q112.5 -26 225 0 t225 0 t225 0 t225 0 t225 0 t225 0 V260 H0 Z" fill="#020b18" opacity="0.85">
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="-450 0" dur="7s" repeatCount="indefinite"/>
+    </path>
+  </g>
+</svg>
