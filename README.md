@@ -60,14 +60,17 @@
 
 <img src="https://raw.githubusercontent.com/LevisNganga1135/LevisNganga1135/main/assets/header-treasures.svg" width="100%" alt="Treasures From the Deep" />
 
+<a href="https://calipath-eta.vercel.app">
+  <img src="https://raw.githubusercontent.com/LevisNganga1135/LevisNganga1135/main/assets/card-feel-the-burn.svg" width="100%" alt="Feel The Burn" />
+</a>
+
 <table>
   <tr>
-    <td><a href="https://calipath-eta.vercel.app"><img src="https://raw.githubusercontent.com/LevisNganga1135/LevisNganga1135/main/assets/card-feel-the-burn.svg" width="440" alt="Feel The Burn" /></a></td>
     <td><a href="https://levisnganga1135.github.io/updated-portfolio"><img src="https://raw.githubusercontent.com/LevisNganga1135/LevisNganga1135/main/assets/card-portfolio.svg" width="440" alt="Deep-Sea Portfolio" /></a></td>
+    <td><a href="https://github.com/LevisNganga1135/supercar-tracker"><img src="https://raw.githubusercontent.com/LevisNganga1135/LevisNganga1135/main/assets/card-supercar.svg" width="440" alt="Supercar Tracker" /></a></td>
   </tr>
   <tr>
-    <td><a href="https://github.com/LevisNganga1135/supercar-tracker"><img src="https://raw.githubusercontent.com/LevisNganga1135/LevisNganga1135/main/assets/card-supercar.svg" width="440" alt="Supercar Tracker" /></a></td>
-    <td><a href="https://github.com/LevisNganga1135/Mama-oliech-restorant"><img src="https://raw.githubusercontent.com/LevisNganga1135/LevisNganga1135/main/assets/card-mama-oliech.svg" width="440" alt="Mama Oliech Restaurant" /></a></td>
+    <td colspan="2" align="center"><a href="https://github.com/LevisNganga1135/Mama-oliech-restorant"><img src="https://raw.githubusercontent.com/LevisNganga1135/LevisNganga1135/main/assets/card-mama-oliech.svg" width="440" alt="Mama Oliech Restaurant" /></a></td>
   </tr>
 </table>
 
