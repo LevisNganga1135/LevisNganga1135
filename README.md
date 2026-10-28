@@ -118,10 +118,10 @@
 
 <div align="center">
 
-<a href="mailto:YOUR_EMAIL_HERE">
+<a href="mailto:leviskariuki2@gmail.com">
   <img src="https://img.shields.io/badge/Email-0a6c8f?style=for-the-badge&logo=gmail&logoColor=3de0d0&labelColor=020b18" alt="Email" />
 </a>
-<a href="YOUR_LINKEDIN_URL_HERE">
+<a href="https://www.linkedin.com/in/levis-nganga-943381212/">
   <img src="https://img.shields.io/badge/LinkedIn-0a6c8f?style=for-the-badge&logo=linkedin&logoColor=3de0d0&labelColor=020b18" alt="LinkedIn" />
 </a>
 <a href="https://levisnganga1135.github.io/updated-portfolio">
