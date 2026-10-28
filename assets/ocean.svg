@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 220" width="900" height="220">
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a6c8f"/>
+      <stop offset="0.5" stop-color="#04364f"/>
+      <stop offset="1" stop-color="#020b18"/>
+    </linearGradient>
+    <g id="fish">
+      <path d="M0 0 C 12 -14, 34 -14, 46 0 C 34 14, 12 14, 0 0 Z"/>
+      <path d="M2 0 L -16 -11 L -16 11 Z"/>
+      <circle cx="36" cy="-3" r="2.5" fill="#020b18"/>
+    </g>
+  </defs>
+
+  <!-- water -->
+  <rect width="900" height="220" rx="12" fill="url(#sea)"/>
+
+  <!-- light rays -->
+  <polygon points="150,0 210,0 330,220 200,220" fill="#ffffff" opacity="0.05">
+    <animate attributeName="opacity" values="0.03;0.09;0.03" dur="6s" repeatCount="indefinite"/>
+  </polygon>
+  <polygon points="520,0 570,0 700,220 590,220" fill="#ffffff" opacity="0.05">
+    <animate attributeName="opacity" values="0.08;0.03;0.08" dur="7s" repeatCount="indefinite"/>
+  </polygon>
+
+  <!-- sonar pulse -->
+  <g fill="none" stroke="#00e5ff" stroke-width="2">
+    <circle cx="70" cy="110" r="5">
+      <animate attributeName="r" from="5" to="120" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" from="0.8" to="0" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="70" cy="110" r="5">
+      <animate attributeName="r" from="5" to="120" dur="4s" begin="1.3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" from="0.8" to="0" dur="4s" begin="1.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="70" cy="110" r="5">
+      <animate attributeName="r" from="5" to="120" dur="4s" begin="2.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" from="0.8" to="0" dur="4s" begin="2.6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <circle cx="70" cy="110" r="4" fill="#00e5ff"/>
+
+  <!-- status text -->
+  <text x="24" y="32" font-family="monospace" font-size="14" fill="#00e5ff">
+    &#9679; SONAR ACTIVE · scanning the deep...
+    <animate attributeName="opacity" values="1;0.4;1" dur="2.5s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- fish swimming right -->
+  <g transform="translate(0,70)">
+    <g fill="#00e5ff">
+      <animateMotion dur="16s" repeatCount="indefinite" path="M -80 0 C 250 -25, 600 25, 980 0"/>
+      <g transform="scale(1)"><use xlink:href="#fish"/></g>
+    </g>
+  </g>
+
+  <g transform="translate(0,125)">
+    <g fill="#3ad6c5">
+      <animateMotion dur="24s" begin="-12s" repeatCount="indefinite" path="M -80 0 C 250 -25, 600 25, 980 0"/>
+      <g transform="scale(1.4)"><use xlink:href="#fish"/></g>
+    </g>
+  </g>
+
+  <!-- fish swimming left -->
+  <g transform="translate(0,150)">
+    <g fill="#ff8a65">
+      <animateMotion dur="20s" begin="-5s" repeatCount="indefinite" path="M 980 0 C 600 -25, 250 25, -80 0"/>
+      <g transform="scale(-0.8,0.8)"><use xlink:href="#fish"/></g>
+    </g>
+  </g>
+
+  <g transform="translate(0,95)">
+    <g fill="#9fdcef">
+      <animateMotion dur="28s" begin="-9s" repeatCount="indefinite" path="M 980 0 C 600 -25, 250 25, -80 0"/>
+      <g transform="scale(-1.1,1.1)"><use xlink:href="#fish"/></g>
+    </g>
+  </g>
+
+  <!-- small school of fish -->
+  <g transform="translate(0,45)">
+    <g fill="#9fdcef" opacity="0.8">
+      <animateMotion dur="13s" begin="-2s" repeatCount="indefinite" path="M -80 0 C 250 -15, 600 15, 980 0"/>
+      <g transform="scale(0.5)"><use xlink:href="#fish"/></g>
+    </g>
+  </g>
+  <g transform="translate(0,58)">
+    <g fill="#9fdcef" opacity="0.8">
+      <animateMotion dur="13s" begin="-3s" repeatCount="indefinite" path="M -80 0 C 250 -15, 600 15, 980 0"/>
+      <g transform="scale(0.5)"><use xlink:href="#fish"/></g>
+    </g>
+  </g>
+  <g transform="translate(0,38)">
+    <g fill="#9fdcef" opacity="0.8">
+      <animateMotion dur="13s" begin="-4s" repeatCount="indefinite" path="M -80 0 C 250 -15, 600 15, 980 0"/>
+      <g transform="scale(0.5)"><use xlink:href="#fish"/></g>
+    </g>
+  </g>
+
+  <!-- jellyfish -->
+  <g transform="translate(760,80)">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -25; 0 0" dur="7s" repeatCount="indefinite"/>
+      <path d="M-20 0 A20 20 0 0 1 20 0 Z" fill="#7df9ff" opacity="0.7">
+        <animate attributeName="opacity" values="0.5;0.9;0.5" dur="3s" repeatCount="indefinite"/>
+      </path>
+      <g stroke="#7df9ff" stroke-width="2" fill="none" opacity="0.7" stroke-linecap="round">
+        <path d="M-12 0 q-5 12 0 26"/>
+        <path d="M-4 0 q5 14 0 30"/>
+        <path d="M4 0 q-5 14 0 30"/>
+        <path d="M12 0 q5 12 0 26"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- bubbles -->
+  <g fill="none" stroke="#9fdcef" stroke-width="1.2">
+    <circle cx="240" cy="210" r="4">
+      <animate attributeName="cy" from="215" to="-10" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="210" r="2.5">
+      <animate attributeName="cy" from="215" to="-10" dur="7s" begin="-3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="7s" begin="-3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="480" cy="210" r="5">
+      <animate attributeName="cy" from="215" to="-10" dur="11s" begin="-5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="11s" begin="-5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="610" cy="210" r="3">
+      <animate attributeName="cy" from="215" to="-10" dur="8s" begin="-1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="8s" begin="-1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="850" cy="210" r="4">
+      <animate attributeName="cy" from="215" to="-10" dur="10s" begin="-6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="10s" begin="-6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- seabed + seaweed -->
+  <path d="M0 220 L0 205 Q150 192 300 206 T600 204 T900 208 L900 220 Z" fill="#010812"/>
+  <g stroke="#0fb5a0" stroke-width="4" fill="none" stroke-linecap="round">
+    <g transform="translate(140,210)">
+      <path d="M0 0 C -8 -18, 8 -34, 0 -52">
+        <animateTransform attributeName="transform" type="rotate" values="-6 0 0; 6 0 0; -6 0 0" dur="4s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    <g transform="translate(155,212)">
+      <path d="M0 0 C 8 -14, -8 -28, 0 -40">
+        <animateTransform attributeName="transform" type="rotate" values="6 0 0; -6 0 0; 6 0 0" dur="3.4s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    <g transform="translate(690,210)">
+      <path d="M0 0 C -8 -18, 8 -34, 0 -56">
+        <animateTransform attributeName="transform" type="rotate" values="-7 0 0; 7 0 0; -7 0 0" dur="4.5s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    <g transform="translate(706,212)">
+      <path d="M0 0 C 8 -14, -8 -28, 0 -42">
+        <animateTransform attributeName="transform" type="rotate" values="7 0 0; -7 0 0; 7 0 0" dur="3.8s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+</svg>
