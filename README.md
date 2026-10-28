@@ -24,7 +24,7 @@
 
 > *"The deeper you dive, the stranger and more beautiful it gets."*
 
-- 🎓 Software Engineering student at **Moringa School**, Nairobi
+- 🎓 Software Engineering graduate from **Moringa School**, Nairobi
 - 🔐 Resuming in January as a part-time remote **cybersecurity** student
 - 🤝 I love building in teams and shipping real projects
 - 🌱 Learning something new with every commit
