@@ -3,7 +3,7 @@
 <img src="https://capsule-render.vercel.app/api?type=venom&color=0:020b18,50:04364f,100:0a6c8f&height=240&section=header&text=Levis%20Nganga&fontSize=60&fontColor=00e5ff&animation=fadeIn&fontAlignY=38&desc=%F0%9F%8C%8A%20Diving%20deep%20into%20code%20%F0%9F%8C%8A&descSize=20&descAlignY=60&descColor=9fdcef" alt="Levis Nganga banner" />
 
 <a href="https://github.com/LevisNganga1135">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1200&color=00E5FF&center=true&vCenter=true&width=620&height=50&lines=Software+Engineering+Student+%F0%9F%90%99;Python+%26+JavaScript+Builder+%F0%9F%A6%91;Descending+into+Cybersecurity+%F0%9F%90%8B;Nairobi%2C+Kenya+%F0%9F%87%B0%F0%9F%87%AA" alt="Typing animation" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1200&color=00E5FF&center=true&vCenter=true&width=620&height=50&lines=Software+Engineering+Graduate+%F0%9F%90%99;Python+%26+JavaScript+Builder+%F0%9F%A6%91;Descending+into+Cybersecurity+%F0%9F%90%8B;Nairobi%2C+Kenya+%F0%9F%87%B0%F0%9F%87%AA" alt="Typing animation" />
 </a>
 
 <br/>
